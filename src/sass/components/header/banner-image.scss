@@ -1,0 +1,10 @@
+.top {
+  position: relative;
+  background-image: url(../images/common/img.jpg);
+  height: 560px;
+  background-size: cover;
+  background-position: center;
+  @include section-for-desctop-up {
+    height: 970px;
+  }
+}

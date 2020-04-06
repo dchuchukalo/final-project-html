@@ -1,0 +1,66 @@
+.section__title {
+  @extend %prg;
+  @include letter-spacing(20);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $black-decore-color;
+  font-family: $caption-font-stack;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    border-radius: 50%;
+    background-color: rgb(252, 174, 38);
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include section-for-phone-only {
+      background-image: url(../images/common/aim.png);
+
+      @media screen and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
+        background-image: url(../images/common/aim@2x.png);
+      }
+    }
+  }
+
+  @include section-for-phone-only {
+    @include auto-line-height($title-font-size-mobile);
+    font-size: $title-font-size-mobile;
+    padding-left: 38px;
+
+    &::before {
+      top: -3px;
+      left: 0px;
+    }
+  }
+
+  @include section-for-tablet-up {
+    @include auto-line-height($title-font-size-tablet);
+    font-size: $title-font-size-tablet;
+
+    &::before {
+      top: 5px;
+    }
+  }
+
+  @include section-for-tablet-only {
+    padding-left: 84px;
+
+    &::before {
+      left: 34px;
+    }
+  }
+
+  @include section-for-desctop-up {
+    padding-left: 50px;
+
+    &::before {
+      left: 0;
+    }
+  }
+}

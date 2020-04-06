@@ -1,0 +1,68 @@
+.banner {
+  padding-top: 325px;
+  margin-bottom: 60px;
+  text-align: center;
+  @include section-for-tablet-up {
+    margin-bottom: 30px;
+  }
+  @include section-for-desctop-up {
+    padding-top: 650px;
+    text-align: left;
+  }
+}
+
+.banner__tittle {
+  @extend %prg;
+  margin-bottom: 20px;
+  font-family: $caption-font-stack;
+  font-weight: 700;
+  @include font-settings(35px, 42px);
+  color: $main-text-color;
+  @include section-for-tablet-up {
+    @include font-settings(45px, 54px);
+  }
+  @include section-for-desctop-up {
+    @include font-settings(65px, 60px);
+  }
+}
+
+.banner__darkwrap {
+  position: relative;
+  min-width: 55px;
+  @include background-opacity(#000, 0.5);
+  @include section-for-tablet-up {
+    width: 445px;
+    margin: 0 auto;
+  }
+  @include section-for-desctop-up {
+    padding: 18px 0 18px 65px;
+    width: 490px;
+    margin: 0;
+    height: 100px;
+
+    &::before {
+      @include pseudo(block, "");
+      position: absolute;
+      width: 2px;
+      height: 65px;
+      background-color: $main-decore-color;
+    }
+  }
+}
+
+.banner__cont {
+  padding-left: 25px;
+}
+
+.banner__info {
+  @extend %prg;
+  color: $main-text-color;
+  @include font-settings(16px, 22px);
+  @include section-for-tablet-up {
+    @include font-settings(27px, 32px);
+  }
+}
+
+.banner__info--yellow {
+  color: $main-decore-color;
+}

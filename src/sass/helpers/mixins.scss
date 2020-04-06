@@ -1,0 +1,46 @@
+@mixin font-settings($size, $height) {
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin pseudo($display: block, $content: "") {
+  display: $display;
+  content: $content;
+}
+
+@mixin auto-line-height($font-size) {
+  line-height: $font-size * 1.2;
+}
+
+@mixin background-opacity($color, $opacity) {
+  background-color: $color; /* The Fallback */
+  background-color: rgba($color, $opacity);
+}
+
+@mixin letter-spacing($interval) {
+  letter-spacing: ($interval / 1000) + em;
+}
+
+@mixin section-for-phone-only {
+  @media screen and (max-width: 729px) {
+    @content;
+  }
+}
+
+@mixin section-for-tablet-up {
+  @media screen and (min-width: 730px) {
+    @content;
+  }
+}
+
+@mixin section-for-tablet-only {
+  @media screen and (min-width: 730px) and (max-width: 1339px) {
+    @content;
+  }
+}
+
+@mixin section-for-desctop-up {
+  @media screen and (min-width: 1340px) {
+    @content;
+  }
+}

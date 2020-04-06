@@ -1,0 +1,25 @@
+/*
+   Import partials below
+*/
+@import "./helpers/variables.scss";
+@import "./helpers/placeholders.scss";
+@import "./helpers/mixins.scss";
+@import "./normalize";
+@import "./fonts.scss";
+@import "./base.scss";
+
+/*components*/
+@import "./components/container.scss";
+
+@import "./components/header/banner-image.scss";
+@import "./components/header/page-header.scss";
+@import "./components/header/banner-info.scss";
+@import "./components/header/down-scroll.scss";
+@import "./components/header/site-nav.scss";
+
+@import "./components/common/section";
+@import "./components/general-info.scss";
+@import "./components/direction.scss";
+@import "./components/teaching-info";
+@import "./components/teaching-struct";
+@import "./components/footer.scss";

@@ -1,0 +1,180 @@
+.general-info {
+  padding-top: 34px;
+  padding-bottom: 52px;
+  @include section-for-tablet-up {
+    padding-top: 40px;
+    padding-bottom: 68px;
+  }
+  @include section-for-desctop-up {
+    padding-top: 116px;
+    padding-bottom: 112px;
+  }
+}
+
+.info {
+  padding-bottom: 42px;
+
+  @include section-for-tablet-only {
+    width: 620px;
+    margin: 0 auto;
+    padding-bottom: 70px;
+  }
+
+  @include section-for-desctop-up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 115px;
+  }
+}
+
+.info-text {
+  position: relative;
+  padding-top: 22px;
+  padding-bottom: 26px;
+
+  @include section-for-tablet-only {
+    max-width: 560px;
+  }
+  @include section-for-desctop-up {
+    max-width: 508px;
+    order: 2;
+  }
+}
+
+.info-text_fact::before {
+  @include pseudo();
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 16px;
+  background-image: url(../images/common/quotes.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include section-for-tablet-only {
+    width: 26px;
+    height: 22px;
+    left: -32px;
+  }
+  @include section-for-desctop-up {
+    left: -42px;
+  }
+
+  // for retina display
+  @media screen and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
+    background-image: url(../images/common/quotes@2x.png);
+  }
+}
+
+.info-text_fact,
+.info-text_research {
+  @extend %prg;
+  @include font-settings($primary-item-font-size, $primary-item-line-height);
+  font-family: $main-font-stack;
+  color: $section-decore-color;
+  @include letter-spacing(50);
+
+  @include section-for-tablet-only {
+    @include font-settings($thirdly-item-font-size, 25px);
+  }
+
+  @include section-for-desctop-up {
+    @include font-settings($title-font-size-mobile, 24px);
+  }
+}
+
+.info-text_fact {
+  @include section-for-tablet-only {
+    margin-bottom: 10px;
+  }
+
+  @include section-for-desctop-up {
+    margin-bottom: 16px;
+  }
+}
+
+.info_img {
+  margin-bottom: 46px;
+  margin-right: 0;
+
+  &--img {
+    border-radius: 6px;
+  }
+  @include section-for-tablet-only {
+    margin-bottom: 70px;
+  }
+  @include section-for-desctop-up {
+    margin-bottom: 0;
+    order: 1;
+  }
+}
+
+.info-training {
+  border-radius: 8px;
+  background-color: $section-bg-decore-color;
+  width: 280px;
+  min-height: 230px;
+  padding: 25px;
+
+  @include section-for-tablet-only {
+    margin: 0 auto;
+    border-radius: 3px;
+    background-color: $section-bg-decore-color;
+    box-shadow: 3px 5.196px 18px 0px rgba(0, 0, 0, 0.15);
+    width: 620px;
+    min-height: 183px;
+    display: flex;
+    padding: 36px 0px 42px 80px;
+  }
+  @include section-for-desctop-up {
+    border-radius: 4px;
+    width: 1298px;
+    min-height: 228px;
+    padding: 62px 237px 62px 277px;
+  }
+}
+
+.info-training_text {
+  @include font-settings($thirdly-item-font-size, $fifthly-item-line-height);
+  @include letter-spacing(50);
+  @extend %prg;
+  font-family: $main-font-stack;
+  color: $main-text-color;
+  text-align: center;
+  position: relative;
+
+  &::before {
+    @include pseudo();
+    background-color: $main-decore-color;
+
+    @include section-for-phone-only {
+      margin: 0 auto;
+      margin-bottom: 12px;
+      width: 60px;
+      height: 2px;
+    }
+
+    @include section-for-tablet-only {
+      position: absolute;
+      left: -24px;
+      top: 6px;
+      width: 2px;
+      height: 100%;
+    }
+  }
+
+  @include section-for-tablet-only {
+    @include font-settings(20px, 28px);
+    text-align: left;
+    width: 450px;
+  }
+
+  @include section-for-desctop-up {
+    @include font-settings(25px, 35px);
+    text-align: left;
+    width: 813px;
+    height: 92px;
+  }
+}

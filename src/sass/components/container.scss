@@ -1,0 +1,30 @@
+.container {
+  margin: 0 auto;
+  padding: 0;
+
+  @include section-for-phone-only {
+    width: 280px;
+  }
+
+  @include section-for-tablet-only {
+    width: 690px;
+  }
+
+  @include section-for-desctop-up {
+    width: 1300px;
+  }
+}
+
+.footer-container {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 200px;
+
+  @include section-for-tablet-up {
+    max-width: 620px;
+  }
+
+  @include section-for-desctop-up {
+    max-width: 1150px;
+  }
+}

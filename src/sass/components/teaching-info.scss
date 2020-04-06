@@ -1,0 +1,215 @@
+.teaching-info {
+  @include section-for-phone-only {
+    padding-top: 55px;
+  }
+
+  @include section-for-tablet-only {
+    padding-top: 60px;
+  }
+
+  @include section-for-desctop-up {
+    position: relative;
+    padding-top: 108px;
+    border-right: 1px dashed $section-bg-border;
+    border-left: 1px dashed $section-bg-border;
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: '';
+      height: 100%;
+      width: 326px;
+      left: 323px;
+      top: 0;
+      border-right: 1px dashed $section-bg-border;
+      border-left: 1px dashed $section-bg-border;
+    }
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      height: 100%;
+      width: 25%;
+      left: 50%;
+      top: 0;
+      border-right: 1px dashed $section-bg-border;
+    }
+  }
+}
+
+.teaching-info__bg {
+  @include section-for-desctop-up {
+    background-color: $section-bg-color;
+  }
+}
+
+.teaching-info__title {
+  @include section-for-tablet-up {
+    &::before {
+      background-image: url(../images/common/bricks.png);
+      background-position: 1px -1px;
+
+      @media screen and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
+        background-image: url(../images/common/bricks@2x.png);
+      }
+    }
+  }
+}
+
+.teaching-info__list {
+  @extend %list;
+  @extend %item;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include section-for-phone-only {
+    padding: 8px 0 50px 45px;
+  }
+
+  @include section-for-tablet-only {
+    padding: 10px 88px 56px 88px;
+    justify-content: space-between;
+  }
+
+  @include section-for-desctop-up {
+    padding-bottom: 106px;
+  }
+}
+
+.teaching-info__item {
+  position: relative;
+
+  &::before {
+    display: block;
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    background-size: 34px 34px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @include section-for-phone-only {
+    flex: 0 0 194px;
+    padding-top: 94px;
+
+    &::before {
+      width: 55px;
+      height: 55px;
+      top: 28px;
+    }
+  }
+
+  @include section-for-tablet-only {
+    flex: 0 0 224px;
+    padding-top: 130px;
+
+    &::before {
+      width: 80px;
+      height: 80px;
+      top: 32px;
+    }
+  }
+
+  @include section-for-desctop-up {
+    flex: 0 0 25%;
+    padding: 184px 47px 0 0;
+
+    &::before {
+      width: 95px;
+      height: 95px;
+      top: 62px;
+    }
+  }
+
+  &:first-child::before {
+    background-color: $section-bg-yelow-color;
+    background-image: url(../images/how_we_teach/globe.png);
+
+    // for retina display
+    @media screen and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
+      background-image: url(../images/how_we_teach/globe@2x.png);
+    }
+  }
+
+  &:nth-child(2)::before {
+    background-color: $section-bg-orange-color;
+    background-image: url(../images/how_we_teach/hands.png);
+
+    // for retina display
+    @media screen and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
+      background-image: url(../images/how_we_teach/hands@2x.png);
+    }
+  }
+
+  &:nth-child(3)::before {
+    background-color: $section-bg-purple-color;
+    background-image: url(../images/how_we_teach/peace.png);
+
+    // for retina display
+    @media screen and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
+      background-image: url(../images/how_we_teach/peace@2x.png);
+    }
+  }
+
+  &:nth-child(4)::before {
+    background-color: $section-bg-aquamarine-color;
+    background-image: url(../images/how_we_teach/coins.png);
+
+    // for retina display
+    @media screen and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
+      background-image: url(../images/how_we_teach/coins@2x.png);
+    }
+  }
+
+  &:nth-last-child(3)::before {
+    background-color: $section-bg-purple-color;
+    background-image: url(../images/how_we_teach/lamp.png);
+
+    // for retina display
+    @media screen and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
+      background-image: url(../images/how_we_teach/lamp@2x.png);
+    }
+  }
+
+  &:nth-last-child(2)::before {
+    background-color: $section-bg-orange-color;
+    background-image: url(../images/how_we_teach/folder.png);
+
+    // for retina display
+    @media screen and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
+      background-image: url(../images/how_we_teach/folder@2x.png);
+    }
+  }
+
+  &:last-child::before {
+    background-color: $section-bg-yelow-color;
+    background-image: url(../images/how_we_teach/arrow-aim.png);
+
+    // for retina display
+    @media screen and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
+      background-image: url(../images/how_we_teach/arrow-aim@2x.png);
+    }
+  }
+}
+
+.teaching-info__item-descr {
+  @extend %prg;
+  @include letter-spacing(50);
+
+  @include section-for-phone-only {
+    font-size: $primary-item-font-size;
+    line-height: $primary-item-line-height;
+  }
+
+  @include section-for-tablet-only {
+    font-size: $secondary-item-font-size;
+    line-height: $secondary-item-line-height;
+  }
+
+  @include section-for-desctop-up {
+    font-size: $thirdly-item-font-size;
+    line-height: $thirdly-item-line-height;
+  }
+}

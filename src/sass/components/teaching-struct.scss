@@ -1,0 +1,166 @@
+.teaching-struct {
+  @include section-for-desctop-up {
+    padding-top: 108px;
+  }
+}
+
+.teaching-struct__title {
+  @include section-for-tablet-up {
+    &::before {
+      background-image: url(../images/common/diagram.png);
+      background-position: center;
+
+      @media screen and (min-resolution: 192dpi) and (min-resolution: 2dppx) {
+        background-image: url(../images/common/diagram@2x.png);
+      }
+    }
+  }  
+}
+
+.teaching-struct__list {
+  @extend %list;
+  @extend %item;
+  counter-reset: title-count;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include section-for-phone-only {
+    padding-top: 24px;
+    padding-bottom: 60px;
+  }
+
+  @include section-for-tablet-only {
+    padding: 64px 35px 76px 35px;
+  }
+
+  @include section-for-tablet-up {
+    justify-content: space-between;
+  }
+
+  @include section-for-desctop-up {
+    padding: 64px 0 114px 0;
+  }
+}
+
+.teaching-struct__item {
+  @include letter-spacing(30);
+  position: relative;
+  border-radius: 0 25px;
+  counter-increment: title-count;
+  padding: 20px;
+
+  &:first-child {
+    background-color: $section-bg-yelow-color;
+
+    &:hover {
+      @include background-opacity($section-bg-yelow-color, 0.7);
+    }
+  }
+
+  &:nth-child(2) {
+    background-color: $section-bg-orange-color;
+
+    &:hover {
+      @include background-opacity($section-bg-orange-color, 0.7);
+    }
+  }
+
+  &:nth-child(3) {
+    background-color: $section-bg-purple-color;
+
+    &:hover {
+      @include background-opacity($section-bg-purple-color, 0.7);
+    }
+  }
+
+  &:last-child {
+    background-color: $section-bg-aquamarine-color;
+
+    &:hover {
+      @include background-opacity($section-bg-aquamarine-color, 0.7);
+    }
+  }
+
+  @include section-for-phone-only {
+    width: 280px;
+    min-height: 260px;
+    box-shadow: 1.5px 2.598px 8px 0px rgba(0, 0, 0, 0.1);
+
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
+  }
+
+  @include section-for-tablet-up {
+    width: 300px;
+    min-height: 293px;
+    box-shadow: 3px 5.196px 18px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  @include section-for-tablet-only {
+    &:nth-child(-n + 2) {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.teaching-struct__item-border {
+  display: block;
+  border: 1px dashed $main-text-color;
+  border-radius: 0 25px;
+
+  @include section-for-phone-only {
+    padding: 30px 24px 24px 24px;
+    min-height: 223px;
+  }
+
+  @include section-for-tablet-up {
+    min-height: 257px;
+    padding: 40px 20px 20px 20px;
+  }
+}
+
+
+.teaching-struct__item-title {
+  @extend %prg;
+  color: $black-decore-color;
+  font-weight: 700;
+  padding-bottom: 18px;
+
+  &::before {
+    content: counter(title-count) '.';
+
+    @include section-for-phone-only {
+      padding-right: 6px;
+    }
+  }
+
+  @include section-for-phone-only {
+    font-size: $item-title-fz-mobile;
+    @include auto-line-height($item-title-fz-mobile);
+  }
+
+  @include section-for-tablet-up {
+    font-size: $item-title-fz-tablet;
+    @include auto-line-height($item-title-fz-tablet);
+  }
+}
+
+.teaching-struct__item-descr {
+  @extend %prg;
+
+  @include section-for-phone-only {
+    font-size: $secondary-item-font-size;
+    line-height: $secondary-item-line-height;
+  }
+
+  @include section-for-tablet-only {
+    font-size: $secondary-item-font-size;
+    line-height: $secondary-item-line-height;
+  }
+
+  @include section-for-desctop-up {
+    font-size: $thirdly-item-font-size;
+    line-height: $fourthly-item-line-height;
+  }
+}
